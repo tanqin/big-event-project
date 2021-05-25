@@ -96,6 +96,7 @@
 
     <script src="./js/index.js"></script>
     <script src="./libs/layui/layui.js"></script>
+    <script src="./js/jqconfig.js"></script>
     <script>
       let layer;
       layui.use("layer", function () {
@@ -116,12 +117,8 @@
         $.ajax({
           type: "get",
           url: "http://localhost:8080/api/v1/admin/user/info",
-          headers: {
-            Authorization: localStorage.getItem("usertoken"), //从本地存储中获取到用户登录后的token携带给服务器
-          },
           success: (res) => {
             console.log(res);
-
             // 如果res.code === 403,表示未登录，则提示用户后跳转至登录页面
             if (res.code === 403) {
               layer.msg(res.msg, { time: 500 }, function () {
