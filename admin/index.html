@@ -1,64 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>大事件-后台首页</title>
-    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/iconfont.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/iconfont.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <script src="./libs/jquery/jquery.min.js"></script>
     <!-- 导入bootstrap的js文件 -->
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="sider">
-        <a href="#" class="logo"><img src="./images/logo02.png" alt="logo"></a>
-        <div class="user_info">
-            <img src="http://localhost:8080/icon.jpg" alt="person">
-            <span>欢迎&nbsp;&nbsp;<i>xxxx</i></span>
-            <b>登录系统</b>
+      <a href="#" class="logo"><img src="./images/logo02.png" alt="logo" /></a>
+      <div class="user_info">
+        <img class="userpic" src="http://localhost:8080/icon.jpg" alt="person" />
+        <span>
+          欢迎&nbsp;&nbsp;
+          <i>xxxx</i>
+        </span>
+        <b>登录系统</b>
+      </div>
+      <!-- 左侧导航栏 -->
+      <div class="menu">
+        <div class="level01 active">
+          <a target="mainbox" href="./main_count.html">
+            <i class="iconfont icon-yidiandiantubiao04"></i>
+            <span>首页</span>
+          </a>
         </div>
-        <!-- 左侧导航栏 -->
-        <div class="menu">
-            <div class="level01 active"><a href="./main_count.html"><i
-                        class="iconfont icon-yidiandiantubiao04"></i><span>首页</span></a></div>
-            <div class="level01 l2"><a href="#"><i class="iconfont icon-icon-article"></i><span>文章管理</span>
-                    <b class="iconfont icon-arrowdownl"></b></a>
-            </div>
-            <ul class="level02">
-                <!-- active 加到li标签上就可以实现菜单选中效果 -->
-                <li><a href="./article_list.html"><i class="iconfont icon-previewright"></i><span>文章列表</span></a></li>
-                <li><a href="./article_add.html"><i class="iconfont icon-previewright"></i><span>发表文章</span></a></li>
-                <li><a href="./article_category.html"><i class="iconfont icon-previewright"></i><span>文章类别管理</span></a>
-                </li>
-            </ul>
+        <div class="level01 l2">
+          <a href="javascript:void(0)">
+            <i class="iconfont icon-icon-article"></i>
+            <span>文章管理</span>
+            <b class="iconfont icon-arrowdownl"></b>
+          </a>
+        </div>
+        <ul class="level02">
+          <!-- active 加到li标签上就可以实现菜单选中效果 -->
+          <li>
+            <a target="mainbox" href="./article_list.html">
+              <i class="iconfont icon-previewright"></i>
+              <span>文章列表</span>
+            </a>
+          </li>
+          <li>
+            <a target="mainbox" href="./article_add.html">
+              <i class="iconfont icon-previewright"></i>
+              <span>发表文章</span>
+            </a>
+          </li>
+          <li>
+            <a target="mainbox" href="./article_category.html">
+              <i class="iconfont icon-previewright"></i>
+              <span>文章类别管理</span>
+            </a>
+          </li>
+        </ul>
 
-            <div class="level01"><a href="./commen_tlist.html"><i
-                        class="iconfont icon-comment"></i><span>评论管理</span></a></div>
+        <div class="level01">
+          <a target="mainbox" href="./commen_tlist.html">
+            <i class="iconfont icon-comment"></i>
+            <span>评论管理</span>
+          </a>
+        </div>
 
-            <div class="level01" id="user"><a href="./user.html"><i class="iconfont icon-user"></i><span>个人中心</span></a>
-            </div>
+        <div class="level01" id="user">
+          <a target="mainbox" href="./user.html">
+            <i class="iconfont icon-user"></i>
+            <span>个人中心</span>
+          </a>
         </div>
-        <!-- 顶部栏 -->
-        <div class="header_bar">
-            <div class="user_center_link">
-                <a href="./user.html">个人中心</a>
-                <img src="http://localhost:8080/icon.jpg" alt="person">
-                <a href="javascript:void(0)" class="logout"><i class="iconfont icon-tuichu"></i> 退出</a>
-            </div>
+      </div>
+      <!-- 顶部栏 -->
+      <div class="header_bar">
+        <div class="user_center_link">
+          <a href="./user.html">个人中心</a>
+          <img class="userpic" src="http://localhost:8080/icon.jpg" alt="person" />
+          <a href="javascript:void(0)" class="logout">
+            <i class="iconfont icon-tuichu"></i>
+            退出
+          </a>
         </div>
-        <!-- 右侧主体内容 -->
-        <div class="main" id="main_body">
-            <iframe src="./main_count.html" frameborder="0" style="width: 100%;height:100%;"></iframe>
-        </div>
+      </div>
+      <!-- 右侧主体内容 -->
+      <div class="main" id="main_body">
+        <!-- iframe相当于一个小的浏览器 -->
+        <iframe name="mainbox" src="./main_count.html" frameborder="0" style="width: 100%; height: 100%"></iframe>
+      </div>
     </div>
 
     <script src="./js/index.js"></script>
-</body>
+    <script src="./libs/layui/layui.js"></script>
+    <script>
+      let layer;
+      layui.use("layer", function () {
+        layer = layui.layer;
 
+        // 调用 getUserInfo()
+        getUserInfo();
+
+        // 调用 initMenu
+        initMenu();
+
+        // 注册所有的菜单点击事件
+        regEventClick();
+      });
+
+      // 1.获取当前登录用户的信息
+      function getUserInfo() {
+        $.ajax({
+          type: "get",
+          url: "http://localhost:8080/api/v1/admin/user/info",
+          headers: {
+            Authorization: localStorage.getItem("usertoken"), //从本地存储中获取到用户登录后的token携带给服务器
+          },
+          success: (res) => {
+            console.log(res);
+
+            // 如果res.code === 403,表示未登录，则提示用户后跳转至登录页面
+            if (res.code === 403) {
+              layer.msg(res.msg, { time: 500 }, function () {
+                // 跳转到首页
+                location.href = "./login.html";
+              });
+            }
+            //   如果res.code != 200，表示登录失败
+            if (res.code !== 200) {
+              layer.msg(res.msg, { time: 500 });
+              return;
+            }
+            // 数据获取成功，将昵称和用户头像更新到页面指定的元素
+            $(".user_info i").html(res.data.nickname);
+            $(".userpic").prop("src", res.data.userPic);
+          },
+        });
+      }
+
+      //   2.负责展开和收缩二级菜单功能
+      function initMenu() {
+        // 1.0 为菜单注册点击事件
+        $(".l2").click(function () {
+          // 2.0 通过$(thsi).find('b')查到b元素对象,根据当前的事件对象获取到它的兄弟元素ul
+          $(this).find("b").toggleClass("rotate0").parents(".l2").next().slideToggle();
+        });
+      }
+
+      //   负责对菜单进行激活操作
+      function regEventClick() {
+        $(".level01,.level02 li").click(function () {
+          //   1.0 清除当前所有一级和二级菜单上的active样式
+          $(".level01,.level02 li").removeClass("active");
+
+          // 2.0 给当前点击的菜单加上active样式
+          $(this).addClass("active");
+        });
+      }
+    </script>
+  </body>
 </html>
