@@ -157,6 +157,25 @@
           $(this).addClass("active");
         });
       }
+
+      // 退出按钮点击事件
+      $(".logout").click(function () {
+        // 1.弹出确认框
+        layer.confirm("确认退出登录？", { icon: 3, title: "提示" }, function (index) {
+          // 1.1 清空本地存储的token数据
+          localStorage.removeItem("usertoken");
+
+          // 1.2点击确认，跳转到登录页
+          location.href = "./login.html";
+
+          // 关闭 confirm 询问框
+          layer.close(index);
+        });
+      });
+
+    
+
+
     </script>
   </body>
 </html>
